@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+.card{
+    display: block;
+    padding: $base-padding;
+    border: $base-border-thickness solid #ddd;
+    box-shadow: $base-box-shadow;
+    margin: $base-margin;
+    border-radius: math.div($base-border-radius, 4);
+
+    .card-title{
+        color: $primary;
+        font-size: $font-size-lg;
+        padding-bottom: $base-padding;
+        font-weight: bold;
+    }
+
+    .card-body{
+        font-size: $base-font-size;
+
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+
+@debug "Checking the radius of the card";
+@debug math.div($base-border-radius, 4);
