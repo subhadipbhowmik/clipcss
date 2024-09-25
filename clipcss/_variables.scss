@@ -6,7 +6,7 @@ $success: #22c55e;    // Green
 $error: #ef4444;      // Red
 $warning: #fbbf24;    // Yellow
 
-// colour palette map
+// Color palette map with additional colors added directly
 $colors: (
     'primary': $primary,
     'secondary': $secondary,
@@ -14,13 +14,23 @@ $colors: (
     'success': $success,
     'error': $error,
     'warning': $warning,
-    "white": #fff,
-    "black": #000,
-    "purple": #8b5cf6
+    'blue': #3b82f6,       // Blue
+    'red': #ef4444,        // Red
+    'green': #22c55e,      // Green
+    'yellow': #fbbf24,     // Yellow
+    'orange': #fb923c,     // Orange
+    'gray': #9ca3af,       // Gray
+    'purple': #8b5cf6,     // Purple
+    'white': #fff,         // White
+    'black': #000          // Black
 );
 
+/*
 @debug map-get($colors, 'purple');
 @debug map-has-key($colors, 'purple');
+@debug map-remove($colors, 'purple');
+@debug map-merge($colors, ('purple': #8b5cf6));
+*/
 
 // Spacing Variables
 $spacer: 1rem;
