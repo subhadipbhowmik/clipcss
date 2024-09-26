@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-.card{
+.card {
     display: block;
     padding: $base-padding;
     border: $base-border-thickness solid #ddd;
@@ -8,19 +8,51 @@
     margin: $base-margin;
     border-radius: math.div($base-border-radius, 4);
 
-    .card-title{
+    .card-title {
         color: $primary;
         padding-bottom: $base-padding;
         font-weight: bold;
     }
 
-    .card-body{
+    .card-body {
         font-size: $base-font-size;
-        a{
+        a {
             text-decoration: underline;
         }
     }
+
+    // Ensure proper layout and padding across different breakpoints
+    @include xs() {
+        padding: $base-padding-xs; // Adjust padding for small screens
+        font-size: $base-font-size-xs;
+    }
+
+    @include sm() {
+        padding: $base-padding-sm;
+        font-size: $base-font-size-sm;
+    }
+
+    @include md() {
+        padding: $base-padding-md;
+        font-size: $base-font-size-md;
+    }
+
+    @include lg() {
+        padding: $base-padding-lg;
+        font-size: $base-font-size-lg;
+    }
+
+    @include xl() {
+        padding: $base-padding-xl;
+        font-size: $base-font-size-xl;
+    }
+
+    @include xxl() {
+        padding: $base-padding-xxl;
+        font-size: $base-font-size-xxl;
+    }
 }
 
+// Debugging the border-radius
 @debug "Checking the radius of the card";
 @debug math.div($base-border-radius, 4);

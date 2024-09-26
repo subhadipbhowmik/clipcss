@@ -1,0 +1,46 @@
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px,
+  "xxl": 1400px
+);
+
+// A more general mixin for breakpoints
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// Handling specific breakpoints
+.responsive-text {
+  // Default (for xs, or smallest screens)
+  color: red;
+
+  @include breakpoint("sm") {
+    color: blue;
+  }
+
+  @include breakpoint("md") {
+    color: green;
+  }
+
+  @include breakpoint("lg") {
+    color: yellow;
+  }
+
+  @include breakpoint("xl") {
+    color: purple;
+  }
+
+  @include breakpoint("xxl") {
+    color: orange;
+  }
+
+  // Custom breakpoint beyond predefined ones
+  @include breakpoint(1600px) {
+    color: pink;
+  }
+}
