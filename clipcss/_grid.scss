@@ -1,56 +1,122 @@
 @use 'sass:math';
 
 $grid-columns: 12;
+$grid-gaps: (
+  "0": 0,
+  "1": 4px,
+  "2": 8px,
+  "3": 12px,
+  "4": 16px,
+  "5": 20px,
+  "6": 24px,
+  "7": 28px,
+  "8": 32px,
+  "9": 36px,
+  "10": 40px,
+  "11": 44px,
+  "12": 48px,
+  "13": 52px,
+  "14": 56px,
+  "15": 60px,
+  "16": 64px,
+  "17": 68px,
+  "18": 72px,
+  "19": 76px,
+  "20": 80px,
+  "21": 84px,
+  "22": 88px,
+  "23": 92px,
+  "24": 96px,
+  "25": 100px
+);
+
+$layout-values: flex-start, flex-end , center, space-between, space-around, space-evenly;
+
 
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .row {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-@include xs() {
-    @for $i from 1 through $grid-columns {
-        .col-xs-#{$i} {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
+// grid gaps
+@each $key, $value in $grid-gaps {
+  .gap-#{$key} > * {
+    padding: $value; 
+  }
+
+  .gap-#{$key}{
+    margin-left: -$value;
+    margin-right: -$value;
+  }
 }
 
-@include sm() {
-    @for $i from 1 through $grid-columns {
-        .col-sm-#{$i} {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
+// justify content classes
+@each $value in $layout-values {
+  .justify-#{$value} {
+    justify-content: $value;
+  }
 }
 
-@include md() {
-    @for $i from 1 through $grid-columns {
-        .col-md-#{$i} {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
+// Column definitions for different breakpoints
+@for $i from 1 through $grid-columns {
+  // Extra small columns (xs)
+  .col-xs-#{$i} {
+    box-sizing: border-box;
+    flex-grow: 0;
+    width: math.div($i * 100%, $grid-columns);
+  }
+
+  // Small columns (sm)
+  @include sm() {
+    .col-sm-#{$i} {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
     }
+  }
+
+  // Medium columns (md)
+  @include md() {
+    .col-md-#{$i} {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+
+  // Large columns (lg)
+  @include lg() {
+    .col-lg-#{$i} {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+
+  // Extra-large columns (xl)
+  @include xl() {
+    .col-xl-#{$i} {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
+
+  // Extra-extra-large columns (xxl)
+  @include xxl() {
+    .col-xxl-#{$i} {
+      box-sizing: border-box;
+      flex-grow: 0;
+      width: math.div($i * 100%, $grid-columns);
+    }
+  }
 }
 
-@include lg() {
-    @for $i from 1 through $grid-columns {
-        .col-lg-#{$i} {
-            box-sizing: border-box;
-            flex-grow: 0;
-            width: math.div($i * 100%, $grid-columns);
-        }
-    }
-}

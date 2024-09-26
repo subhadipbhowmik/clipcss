@@ -23,36 +23,37 @@
 
     // Ensure proper layout and padding across different breakpoints
     @include xs() {
-        padding: $base-padding-xs; // Adjust padding for small screens
-        font-size: $base-font-size-xs;
+        padding: $base-padding; // Adjust padding for small screens
+        font-size: $base-font-size;
     }
 
     @include sm() {
-        padding: $base-padding-sm;
-        font-size: $base-font-size-sm;
+        padding: $base-padding;
+        font-size: $base-font-size;
     }
 
     @include md() {
-        padding: $base-padding-md;
-        font-size: $base-font-size-md;
+        padding: $base-padding;
+        font-size: $base-font-size;
     }
 
     @include lg() {
-        padding: $base-padding-lg;
-        font-size: $base-font-size-lg;
+        padding: $base-padding;
+        font-size: $base-font-size;
     }
 
     @include xl() {
-        padding: $base-padding-xl;
-        font-size: $base-font-size-xl;
+        padding: $base-padding;
+        font-size: $base-font-size;
     }
 
     @include xxl() {
-        padding: $base-padding-xxl;
-        font-size: $base-font-size-xxl;
+        padding: $base-padding;
+        font-size: $base-font-size;
     }
 }
 
 // Debugging the border-radius
 @debug "Checking the radius of the card";
 @debug math.div($base-border-radius, 4);
+
