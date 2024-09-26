@@ -10,14 +10,12 @@
 
     .card-title{
         color: $primary;
-        font-size: $font-size-lg;
         padding-bottom: $base-padding;
         font-weight: bold;
     }
 
     .card-body{
         font-size: $base-font-size;
-
         a{
             text-decoration: underline;
         }

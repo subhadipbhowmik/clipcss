@@ -1,4 +1,5 @@
 /* Variables and Functions */
+@import "functions";
 @import "variables";
 
 /* Base & Layout */
@@ -12,5 +13,6 @@
 @import "components/button";
 
 /* Utilities (margin, padding, opacity, display, etc.) */
+@import "utilities";
 
 

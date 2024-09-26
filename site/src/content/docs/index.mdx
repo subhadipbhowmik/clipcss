@@ -1,0 +1,39 @@
+---
+title: Home
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Minimalistic, Modern & Light Weight CSS Library
+  image:
+    file: ../../assets/clipcsslogo.png
+  actions:
+    - text: Documentation
+      link: /documentation/introduction/
+      icon: right-arrow
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Why clipcss
+
+<CardGrid stagger>
+	<Card title="Utility-first Design" icon="pencil">
+		Use predefined utility classes to style your elements easily with ClipCSS, making development faster and more efficient.
+	</Card>
+	<Card title="Customizable Components" icon="add-document">
+		Leverage ClipCSS's component-based structure to create reusable, customizable UI elements for consistent design.
+	</Card>
+	<Card title="Responsive Flexibility" icon="setting">
+		Build fully responsive layouts effortlessly with ClipCSS's built-in responsive grid system and utility classes.
+	</Card>
+	<Card title="Lightweight and Fast" icon="open-book">
+		ClipCSS is designed to be lightweight, keeping your pages fast and snappy without sacrificing customization.
+	</Card>
+	<Card title="SCSS Powered" icon="setting">
+		ClipCSS is built with SCSS at its core, giving you advanced styling features like variables, mixins, and nesting for powerful CSS control.
+	</Card>
+	<Card title="Developer-friendly" icon="open-book">
+		ClipCSS’s simplicity and clear documentation make it easy for developers to integrate and customize for any project.
+	</Card>
+</CardGrid>
+
